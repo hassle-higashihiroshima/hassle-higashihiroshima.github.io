@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>市民活動団体ハッスル | GitHub Portal</title>
+<meta name="description" content="東広島市（御薗宇地区）を中心に活動する「市民活動団体ハッスル」の公式Webサイト案内ページです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f4f7f6;
+    --surface: #ffffff;
+    --border: #dfe6e3;
+    --text: #1e293b;
+    --muted: #5a6a7e;
+    --green: #16a34a;
+    --orange: #f59e0b;
+    --blue: #0284c7;
+    --accent-grad: linear-gradient(135deg, #16a34a 0%, #84cc16 50%, #0284c7 100%);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    background-image:
+      radial-gradient(circle at 15% 15%, rgba(22, 163, 74, 0.08) 0%, transparent 45%),
+      radial-gradient(circle at 85% 85%, rgba(2, 132, 199, 0.08) 0%, transparent 45%);
+    color: var(--text);
+    font-family: 'Zen Kaku Gothic New', -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 24px 16px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 560px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+    overflow: hidden;
+    text-align: center;
+  }
+
+  .top-bar {
+    height: 6px;
+    background: var(--accent-grad);
+  }
+
+  .card-body {
+    padding: 40px 32px 32px;
+  }
+
+  .emblem {
+    width: 84px;
+    height: 84px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 3px solid #e2e8f0;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+
+  .emblem-letter {
+    font-size: 34px;
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--green), var(--orange), var(--blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    line-height: 1;
+  }
+
+  .emblem-leaf {
+    font-size: 13px;
+    margin-top: 2px;
+  }
+
+  .area-badge {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--green);
+    background: rgba(22, 163, 74, 0.1);
+    padding: 4px 14px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    margin-bottom: 6px;
+  }
+
+  .sub-id {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .lead {
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 28px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 30px;
+  }
+
+  .tag {
+    font-size: 12px;
+    color: var(--text);
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    padding: 5px 12px;
+    border-radius: 8px;
+  }
+
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    max-width: 340px;
+    padding: 15px 24px;
+    border-radius: 12px;
+    background: var(--accent-grad);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(22, 163, 74, 0.25);
+    transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+  }
+
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(22, 163, 74, 0.32);
+    opacity: 0.96;
+  }
+
+  .card-footer {
+    background: #f8fafc;
+    border-top: 1px solid var(--border);
+    padding: 16px 24px;
+    font-size: 12px;
+    color: var(--muted);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .powered {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: #7c8b9e;
+  }
+
+  .powered a {
+    color: #d946ef;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .powered a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 480px) {
+    .card-body { padding: 32px 20px 28px; }
+    h1 { font-size: 21px; }
+  }
+</style>
+</head>
+<body>
+
+  <main class="card">
+    <div class="top-bar"></div>
+
+    <div class="card-body">
+      <div class="emblem" aria-hidden="true">
+        <span class="emblem-letter">H</span>
+        <span class="emblem-leaf">🌱</span>
+      </div>
+
+      <span class="area-badge">📍 広島県東広島市・御薗宇地区</span>
+      <h1>市民活動団体ハッスル</h1>
+      <p class="sub-id">hassle-higashihiroshima.github.io</p>
+
+      <p class="lead">
+        子どもからシニアまで、地域のつながりと笑顔を育む<br>
+        ボランティア・コミュニティ活動を行っています。<br>
+        最新のイベント情報・参加申込は公式ホームページをご覧ください。
+      </p>
+
+      <div class="tags">
+        <span class="tag">☕ こどもcafé / 愛café</span>
+        <span class="tag">🤝 多世代交流</span>
+        <span class="tag">🎳 地域イベント</span>
+      </div>
+
+      <a class="cta-btn" href="https://hassle-higashihiroshima.pages.dev/">
+        公式ホームページを開く →
+      </a>
+    </div>
+
+    <footer class="card-footer">
+      <div>© 2026 市民活動団体ハッスル（東広島市）</div>
+      <div class="powered">
+        Powered by <a href="https://tsundere-systems.com/" target="_blank" rel="noopener">tsundere-systems.com</a>
+      </div>
+    </footer>
+  </main>
+
+</body>
+</html>
